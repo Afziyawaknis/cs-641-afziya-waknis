@@ -1,15 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { ScrollView, Image, ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { Image,ActivityIndicator, ScrollView,StyleSheet, Text, View } from 'react-native';
+import react,{useState} from "react";
+import FunctionalComponent from './components/functionalcomponent';
 
 export default function App() {
+ 
   return (
     <ScrollView>
-      <Text>text 1</Text>
-        <Text>text 2</Text>
-        <ActivityIndicator></ActivityIndicator>
-        <Image source={{ uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg==',}}
-        style={styles.tinylogo}></Image>
-     </ScrollView>
+      <Text>Text1</Text>
+      <Text>Text2</Text>
+      <ActivityIndicator></ActivityIndicator>
+      <FunctionalComponent title={"Increase"} showButton={true} showButton2={false}/>
+      <FunctionalComponent title={"Decrease"} showButton={false} showButton2={true}/>
+      </ScrollView>
   );
 }
 
@@ -20,8 +23,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  tinylogo: {
-    width: 500,
-    height: 500,
-  }
+  tinyLogo:{
+    width:500,
+    height:500,
+  }
 });
